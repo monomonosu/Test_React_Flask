@@ -13,12 +13,13 @@ RUN apt -y autoremove
 RUN npm install -g yarn
 RUN yarn global add create-react-app react-scripts
 RUN yarn
-# RUN yarn add eject (yarnでpackage.jsonでインストールされるはず)
 # RUN npm install
+RUN npm run build
+# RUN yarn add eject
 
 WORKDIR ../
 # RUN create-react-app frontend
-RUN npm run eject
+# RUN npm run eject (gitプロジェクトにconfigが既にあるから)
 
 WORKDIR ./app
 RUN pip install Flask
