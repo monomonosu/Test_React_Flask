@@ -1,10 +1,10 @@
 from flask import render_template
 from app import app
 
-@app.route('/', defaults={'path': ''})
-@app.route('/<path:path>')
-def index(path):
-    return render_template('index.html')
+
+@app.route('/')
+def index():
+    return render_template('index.html', token='Hello Flask+React')
 
 
 if __name__ == '__main__':
