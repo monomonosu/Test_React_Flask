@@ -10,16 +10,12 @@ RUN npm install -g n
 RUN n 16.14.2
 RUN apt purge -y nodejs npm
 RUN apt -y autoremove
-RUN npm install -g yarn
-RUN yarn global add create-react-app react-scripts
-RUN yarn
-# RUN npm install
+RUN npm install
+RUN npm run build
 RUN npm run build
 # RUN yarn add eject
 
 WORKDIR ../
-# RUN create-react-app frontend
-# RUN npm run eject (gitプロジェクトにconfigが既にあるから)
 
 WORKDIR ./app
 RUN pip install Flask
